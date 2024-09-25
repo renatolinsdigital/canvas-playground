@@ -1,6 +1,6 @@
 # Canvas Playground
 
-A showcase application demonstrating advanced programming techniques with HTML Canvas.
+A showcase application demonstrating some programming techniques with HTML Canvas.
 
 ## Project Overview
 
@@ -8,15 +8,13 @@ This application is a work in progress, designed to explore and demonstrate vari
 
 ## Features
 
-- Interactive drawing tools
-- Real-time stroke rendering
-- Pressure sensitivity support (for compatible devices)
+- Real-time stroke
 - Eraser functionality
-- Responsive canvas sizing
+- Pressure sensitivity support (for compatible devices)
 
-## Preview
+## Print
 
-![Canvas Playground Preview](prints/temp-print.png)
+![Canvas Playground Preview](prints/hello-world.png)
 _Note: This is a temporary preview and may not reflect the current state of the application._
 
 ## Getting Started
