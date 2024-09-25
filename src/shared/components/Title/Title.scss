@@ -1,0 +1,26 @@
+.title {
+  @apply text-light-text dark:text-dark-text;
+  &.h1 {
+    @apply text-jumbo font-text-bold;
+  }
+
+  &.h2 {
+    @apply text-bigger font-text-semi-bold;
+  }
+
+  &.h3 {
+    @apply text-large font-text-semi-bold;
+  }
+
+  &.h4 {
+    @apply text-medium font-text-semi-bold;
+  }
+
+  &.h5 {
+    @apply text-default;
+  }
+
+  &.h6 {
+    @apply text-smaller;
+  }
+}

@@ -1,0 +1,19 @@
+/* This file loads custom fonts for the theme to use*/
+
+@font-face {
+  font-weight: normal;
+  font-family: "TitilliumWeb Regular";
+  src: url("@/fonts/TitilliumWeb/TitilliumWeb-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: "TitilliumWeb SemiBold";
+  src: url("@/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "TitilliumWeb Bold";
+  src: url("@/fonts/TitilliumWeb/TitilliumWeb-Bold.ttf") format("truetype");
+}

@@ -1,0 +1,17 @@
+/* Tailwind imports */
+
+// .tailwind {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// }
+
+/* 
+Ps. The .tailwind wrapper restricts Tailwind's styling to components only. 
+Use it if you want to ensure that every style comes from a component's style sheet. 
+*/
+
+/* Project Imports */
+@import "_fonts.scss";
+@import "_reset.scss";
+@import "_layout.scss";

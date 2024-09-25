@@ -1,0 +1,16 @@
+.header {
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+
+  @apply flex p-4;
+  @apply font-text-semi-bold;
+  @apply bg-secondary dark:bg-dark-app-background text-neutral-gray-1 dark:text-dark-text;
+
+  .logo-and-title-container {
+    gap: 0.3rem;
+    display: flex;
+    justify-content: center;
+  }
+}

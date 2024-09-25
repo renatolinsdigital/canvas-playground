@@ -1,0 +1,113 @@
+/*React App reset */
+#root {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*Html elements reset*/
+
+*,
+*:before,
+*:after {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  text-decoration: none;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  transition: all 0.2s ease;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  user-select: none; /*for this project only*/
+}
+
+html,
+body {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px; /* So that 1rem is 16px */
+}
+
+a,
+button,
+select {
+  color: inherit;
+  cursor: pointer;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+
+section:before,
+section:after {
+  content: "";
+  display: table;
+}
+
+section:after {
+  clear: both;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+strong {
+  font-weight: bold;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+img,
+svg {
+  height: auto;
+  width: "100%";
+  max-width: 100%;
+}
+
+input,
+textarea,
+button {
+  resize: none;
+}
+
+input[type="button"],
+input[type="submit"],
+select,
+button {
+  cursor: pointer;
+}
+
+nav,
+main,
+aside,
+menu,
+figure,
+footer,
+header,
+hgroup,
+section,
+article,
+details,
+figcaption {
+  display: flex;
+}
+
+/*SVG on IE*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  img[src$=".svg"] {
+    width: 100%;
+  }
+}

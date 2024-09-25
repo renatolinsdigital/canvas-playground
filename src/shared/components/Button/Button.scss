@@ -1,0 +1,51 @@
+.coloring-default {
+  @apply text-light-button-text bg-light-button-background hover:bg-light-button-background-hover;
+  @apply dark:text-dark-button-text dark:bg-dark-button-background dark:hover:bg-dark-button-background-hover;
+}
+
+.coloring-primary {
+  @apply text-neutral-gray-1 bg-primary hover:bg-primary-dark;
+  @apply dark:text-neutral-gray-1 dark:bg-primary dark:hover:bg-primary-dark;
+}
+
+.coloring-secondary {
+  @apply text-neutral-gray-1 bg-secondary hover:bg-secondary-dark;
+  @apply dark:text-neutral-gray-1 dark:bg-secondary dark:hover:bg-secondary-dark;
+}
+
+.coloring-tertiary {
+  @apply text-neutral-dark bg-tertiary hover:bg-tertiary-dark;
+  @apply dark:text-neutral-dark dark:bg-tertiary dark:hover:bg-tertiary-dark;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  @apply px-4 py-1 rounded-md font-semibold transition-colors duration-300;
+
+  &.coloring-default {
+    @extend .coloring-default;
+  }
+
+  &.coloring-primary {
+    @extend .coloring-primary;
+  }
+
+  &.coloring-secondary {
+    @extend .coloring-secondary;
+  }
+
+  &.coloring-tertiary {
+    @extend .coloring-tertiary;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+
+  &.coloring-transparent {
+    @apply bg-transparent text-transparent;
+  }
+}

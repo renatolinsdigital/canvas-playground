@@ -1,0 +1,4 @@
+.footer {
+  height: 35px;
+  @apply flex bg-secondary dark:bg-dark-app-background text-neutral-gray-1 dark:text-dark-text p-2;
+}
