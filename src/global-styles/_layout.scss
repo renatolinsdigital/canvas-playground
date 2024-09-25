@@ -1,5 +1,11 @@
 /* Layout - CSS/Sass styles for the overall app structure*/
 
+:root {
+  --footer-height: 35px;
+  --header-height: 70px;
+  --toolbar-height: 35px;
+}
+
 .row {
   flex-direction: row;
 }

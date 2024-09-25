@@ -1,8 +1,8 @@
 .header {
-  height: 70px;
   padding: 1rem;
   display: flex;
   justify-content: flex-start;
+  height: var(--header-height);
 
   @apply flex p-4;
   @apply font-text-semi-bold;

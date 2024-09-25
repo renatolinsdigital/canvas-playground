@@ -1,6 +1,6 @@
 .canvas-container {
-  max-height: calc(100vh - 140px);
-  min-height: calc(700px - 140px);
+  min-height: 600px;
+  max-height: calc(100vh - var(--header-height) - var(--footer-height));
 
   @apply bg-neutral-gray-4;
   @apply flex-1 w-full h-full flex justify-start;

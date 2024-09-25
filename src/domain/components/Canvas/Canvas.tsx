@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setCanvasSize } from "@/features/canvas/canvasSlice";
 
-const CANVAS_WIDTH = 1920;
-const CANVAS_HEIGHT = 1080;
+const MAX_CANVAS_WIDTH = 1920;
+const MAX_CANVAS_HEIGHT = 1080;
 
 interface Point {
   x: number;
@@ -38,11 +38,10 @@ function Canvas() {
     if (canvas) {
       const context = canvas.getContext("2d", { willReadFrequently: true });
       if (context) {
-        const newWidth = Math.min(canvasWidth, CANVAS_WIDTH);
-        const newHeight = Math.min(canvasHeight, CANVAS_HEIGHT);
-        canvas.width = newWidth;
-        canvas.height = newHeight;
-        dispatch(setCanvasSize({ width: newWidth, height: newHeight }));
+        // Set canvas size based on the current state
+        canvas.width = Math.min(canvasWidth, MAX_CANVAS_WIDTH);
+        canvas.height = Math.min(canvasHeight, MAX_CANVAS_HEIGHT);
+        dispatch(setCanvasSize({ width: canvas.width, height: canvas.height }));
 
         const resizeObserver = new ResizeObserver(() => {
           const { width, height } = canvas.getBoundingClientRect();
@@ -53,13 +52,13 @@ function Canvas() {
             canvas.height
           );
 
-          const newWidth = Math.min(width, CANVAS_WIDTH);
-          const newHeight = Math.min(height, CANVAS_HEIGHT);
-          canvas.width = newWidth;
-          canvas.height = newHeight;
+          canvas.width = Math.min(width, MAX_CANVAS_WIDTH);
+          canvas.height = Math.min(height, MAX_CANVAS_HEIGHT);
 
           context.putImageData(imageData, 0, 0);
-          dispatch(setCanvasSize({ width: newWidth, height: newHeight }));
+          dispatch(
+            setCanvasSize({ width: canvas.width, height: canvas.height })
+          );
         });
 
         resizeObserver.observe(canvas);
@@ -67,7 +66,7 @@ function Canvas() {
         return () => resizeObserver.disconnect();
       }
     }
-  }, [dispatch, canvasWidth, canvasHeight]);
+  }, [dispatch, canvasWidth, canvasHeight]); // Added canvasWidth and canvasHeight to dependencies
 
   useEffect(() => {
     const canvas = canvasReference.current;
@@ -133,8 +132,8 @@ function Canvas() {
           e instanceof TouchEvent ? e.touches[0].force || 0.5 : 0.5;
 
         return {
-          x: clientX - rect.left,
-          y: clientY - rect.top,
+          x: (clientX - rect.left) * (canvas.width / rect.width),
+          y: (clientY - rect.top) * (canvas.height / rect.height),
           pressure,
         };
       };
@@ -161,14 +160,7 @@ function Canvas() {
 
   return (
     <div className="canvas-container">
-      <canvas
-        ref={canvasReference}
-        className="canvas"
-        style={{
-          maxWidth: `${CANVAS_WIDTH}px`,
-          maxHeight: `${CANVAS_HEIGHT}px`,
-        }}
-      />
+      <canvas ref={canvasReference} className="canvas" />
     </div>
   );
 }
